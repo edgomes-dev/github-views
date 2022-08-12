@@ -1,0 +1,33 @@
+:root {
+  --blue-900: #171821;
+  --blue-800: #21222d;
+  --blue-500: #22aef5;
+  --gray-500: #76767a;
+  --gray-100: #fafafa;
+}
+
+body {
+  background-color: var(--blue-900);
+  overflow-x: hidden;
+}
+
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+input,
+div {
+  font-family: "Roboto", sans-serif;
+}

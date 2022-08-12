@@ -1,0 +1,16 @@
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  h1 {
+    color: white;
+  }
+
+  input {
+    width: 25rem;
+    height: 3rem;
+    border-radius: 1.2em;
+    //background-color: var(--gray-500);
+  }
+}
