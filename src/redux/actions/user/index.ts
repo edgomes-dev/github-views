@@ -1,7 +1,10 @@
 import * as types from "../../types";
 
-export const fetchUserRequest = (): types.IFetchUserRequestAction => ({
+export const fetchUserRequest = (
+  user: string
+): types.IFetchUserRequestAction => ({
   type: types.FETCH_USER_REQUEST,
+  user,
 });
 
 export const fetchUserSucess = (

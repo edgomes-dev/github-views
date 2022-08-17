@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export const Menu = () => {
   let navigate = useNavigate();
@@ -8,7 +8,9 @@ export const Menu = () => {
 
   return (
     <div className="menu">
-      <h1>Github Perfil views</h1>
+      <Link to="/">
+        <h1>Github Perfil views</h1>
+      </Link>
       <form onSubmit={(e) => navigate(`/profile/${profile}`)}>
         <input
           type="search"

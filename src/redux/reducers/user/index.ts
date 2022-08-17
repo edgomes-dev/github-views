@@ -23,7 +23,7 @@ const initialState: types.IUserState = {
 export const userReducer = (
   state = initialState,
   action: types.UserActions
-) => {
+): types.IUserState => {
   switch (action.type) {
     case types.FETCH_USER_REQUEST:
       return {
@@ -50,21 +50,3 @@ export const userReducer = (
       };
   }
 };
-
-/*
-
-
-const initialState: types.IUser = {
-  pending: false,
-  error: null,
-  login: "",
-  avatar_url: "",
-  name: "",
-  blog: "",
-  location: "",
-  bio: "",
-  created_at: "",
-  updated_at: "",
-};
-
-*/

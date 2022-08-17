@@ -1,0 +1,19 @@
+h2 {
+  margin-top: 6rem;
+  color: var(--gray-100);
+  text-align: center;
+}
+
+.profileContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+
+  img {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50px;
+  }
+}

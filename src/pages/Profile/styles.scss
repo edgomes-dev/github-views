@@ -1,5 +1,10 @@
 .container {
   width: 80%;
   margin: auto;
-  background-color: gray;
+  background-color: var(--gray-500);
+
+  .information {
+    display: flex;
+    justify-content: space-around;
+  }
 }

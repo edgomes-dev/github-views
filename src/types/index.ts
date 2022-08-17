@@ -1,8 +1,8 @@
 export interface IRepositories {
+  login: String;
   name: String;
   html_url: String;
-  created_at: String;
-  update_at: String;
+  description: String;
   language: String;
-  topics: [String];
+  stargazers_count: String;
 }

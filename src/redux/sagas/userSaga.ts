@@ -1,20 +1,26 @@
 import axios from "axios";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 
-import { fetchUserFailure, fetchUserSucess } from "../actions";
+import { fetchUserFailure, fetchUserSucess, userHistory } from "../actions";
 import * as types from "../types";
 
-const getUser = () =>
-  axios.get<types.IUser>("https://api.github.com/users/edgomes-dev");
+interface IUserFetchResponse {
+  user: string;
+}
 
-function* fetchUserSaga(): any {
+const getUser = async (user: string): Promise<IUserFetchResponse> => {
+  return await axios.get(`https://api.github.com/users/${user}`);
+};
+
+function* fetchUserSaga({ user }: types.IFetchUserRequestAction): any {
   try {
-    const response = yield call(getUser);
+    const response = yield call(getUser, user);
     yield put(
       fetchUserSucess({
         user: response.data,
       })
     );
+    yield put(userHistory({ users: [response.data] }));
   } catch (err) {
     if (err instanceof Error) {
       yield put(

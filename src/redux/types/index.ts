@@ -1,6 +1,10 @@
 export const FETCH_USER_REQUEST = "FETCH_USER_REQUEST";
 export interface IFetchUserRequestAction {
   type: typeof FETCH_USER_REQUEST;
+  user: string;
+}
+export interface IFetchUserRequestPayload {
+  id: string | undefined;
 }
 
 export const FETCH_USER_SUCESS = "FETCH_USER_SUCESS";
@@ -43,3 +47,20 @@ export type UserActions =
   | IFetchUserRequestAction
   | IFetchUserSucessAction
   | IFetchUserFailureAction;
+
+// User History
+
+export const USER_HISTORY = "USER_HISTORY";
+export interface IUserHistoryAction {
+  type: typeof USER_HISTORY;
+  payload: IUserHistoryPayload;
+}
+export interface IUserHistoryPayload {
+  users: IUser[];
+}
+
+export interface IUserHistoryState {
+  users: IUser[];
+}
+
+export type UserHistoryActions = IUserHistoryAction;
